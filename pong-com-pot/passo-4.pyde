@@ -37,7 +37,7 @@ def draw():
           ESPESSURA_JOGADOR,
           MEIO_JOGADOR*2)
     JOGADOR_V_Y = arduino.analogRead(POT_V)/2
-     fill(255,0,0)
+    fill(255,0,0)
     rect (width - ESPESSURA_JOGADOR,
           JOGADOR_V_Y - MEIO_JOGADOR,
           ESPESSURA_JOGADOR,
@@ -50,7 +50,7 @@ def draw():
     fill(255)
     ellipse(BOLA_X, BOLA_Y, BOLA_TAMANHO, BOLA_TAMANHO)
     if BOLA_X < 0:
-       if JOGADOR_A_Y - MEIO_JOGADOR < BOLA_Y < JOGADOR_A_Y + MEIO_JOGADOR:
+        if JOGADOR_A_Y - MEIO_JOGADOR < BOLA_Y < JOGADOR_A_Y + MEIO_JOGADOR:
             BOLA_VEL_X = -BOLA_VEL_X
         else:
             BOLA_VEL_X, BOLA_VEL_Y = 0, 0
