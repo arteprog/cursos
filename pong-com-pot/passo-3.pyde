@@ -20,28 +20,28 @@ def setup():
     global arduino
     # println((Arduino.list()))
     arduino = Arduino(this, Arduino.list()[SERIAL], 57600)
-   
+    
     # BOLA
     global BOLA_X, BOLA_Y, BOLA_VEL_X, BOLA_VEL_Y
-    BOLA_X, BOLA_Y = width/2, height/2
+    BOLA_X, BOLA_Y = width / 2, height / 2
     BOLA_VEL_X, BOLA_VEL_Y = 0, 0
 
 def draw():
     background(0) # limpa a tela
 
     #JOGADORES
-    JOGADOR_A_Y = arduino.analogRead(POT_A)/2
+    JOGADOR_A_Y = arduino.analogRead(POT_A) / 2
     fill(0,0,255)
     rect (0,
           JOGADOR_A_Y - MEIO_JOGADOR,
           ESPESSURA_JOGADOR,
           MEIO_JOGADOR*2)
-    JOGADOR_B_Y = arduino.analogRead(POT_B)/2
-     fill(255,0,0)
+    JOGADOR_B_Y = arduino.analogRead(POT_B) / 2
+    fill(255,0,0)
     rect (width - ESPESSURA_JOGADOR,
           JOGADOR_B_Y - MEIO_JOGADOR,
           ESPESSURA_JOGADOR,
-          MEIO_JOGADOR*2)   
+          MEIO_JOGADOR * 2)   
 
     # BOLA
     global BOLA_X, BOLA_Y, BOLA_VEL_X, BOLA_VEL_Y
@@ -60,6 +60,6 @@ def draw():
 
 def keyPressed():
     global BOLA_X, BOLA_Y, BOLA_VEL_X, BOLA_VEL_Y
-    BOLA_X, BOLA_Y = width/2, height/2
-    BOLA_VEL_X = (-4,4)[int(random(2))] 
-    BOLA_VEL_Y = (-4,4)[int(random(2))]
+    BOLA_X, BOLA_Y = width / 2, height / 2
+    BOLA_VEL_X = (-4, 4)[int(random(2))] 
+    BOLA_VEL_Y = (-4, 4)[int(random(2))]
