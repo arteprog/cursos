@@ -3,8 +3,8 @@
 # ARDUINO
 add_library('serial') #import processing.serial.*;
 add_library('arduino') #import cc.arduino.*;
-POT_A = 0   # Pino que vai ser lido
-POT_B = 5   # Pino que vai ser lido
+POT_A = 0   # Pino que vai ser lido controle jogador Amarelo
+POT_V = 5   # Pino que vai ser lido controle jogador Verde
 SERIAL = 5  # Arduino na lista de portas seriais
 
 # JOGADORES
@@ -31,15 +31,15 @@ def draw():
 
     #JOGADORES
     JOGADOR_A_Y = arduino.analogRead(POT_A) / 2
-    fill(0,0,255)
+    fill(255, 255, 0) # Amarelo
     rect (0,
           JOGADOR_A_Y - MEIO_JOGADOR,
           ESPESSURA_JOGADOR,
           MEIO_JOGADOR*2)
-    JOGADOR_B_Y = arduino.analogRead(POT_B) / 2
-    fill(255,0,0)
+    JOGADOR_V_Y = arduino.analogRead(POT_V) / 2
+    fill(0, 255, 0) # Verde
     rect (width - ESPESSURA_JOGADOR,
-          JOGADOR_B_Y - MEIO_JOGADOR,
+          JOGADOR_V_Y - MEIO_JOGADOR,
           ESPESSURA_JOGADOR,
           MEIO_JOGADOR * 2)   
 
