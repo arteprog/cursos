@@ -5,7 +5,7 @@ add_library('serial') #import processing.serial.*;
 add_library('arduino') #import cc.arduino.*;
 POT_A = 0   # Pino que vai ser lido controle 'jogador Amarelo'
 POT_V = 5   # Pino que vai ser lido controle 'jogador Verde'
-SERIAL = 32  # Arduino na lista de portas seriais
+SERIAL = 0  # Arduino na lista de portas seriais, confira no print!
 
 #JOGADORES
 MEIO_JOGADOR = 50
@@ -15,7 +15,7 @@ def setup():
   size(1024, 512)
 
   global arduino  
-  # println((Arduino.list())) # para ver a lista de portas seriais
+  println((Arduino.list())) # para ver a lista de portas seriais
   arduino = Arduino(this, Arduino.list()[SERIAL], 57600) # objeto Arduino
 
 def draw():
