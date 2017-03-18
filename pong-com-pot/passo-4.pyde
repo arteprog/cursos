@@ -5,7 +5,7 @@ add_library('serial') #import processing.serial.*;
 add_library('arduino') #import cc.arduino.*;
 POT_A = 0   # Pino que vai ser lido controle 'jogador Amarelo'
 POT_V = 5   # Pino que vai ser lido controle 'jogador Verde'
-SERIAL = 5  # Arduino na lista de portas seriais
+SERIAL = 0  # MUDE para o índice do seu Arduino na lista de portas seriais!
 
 # JOGADORES
 MEIO_JOGADOR = 50
@@ -18,7 +18,7 @@ def setup():
     size(600, 400) # tamanho da tela
     
     global arduino
-    # println((Arduino.list()))
+    # println((Arduino.list())) # Para ver a lista de portas seriais!
     arduino = Arduino(this, Arduino.list()[SERIAL], 57600)
     
     # BOLA
@@ -69,3 +69,5 @@ def keyPressed(): # 'reset' quando apertar uma tecla
     BOLA_X, BOLA_Y = width / 2, height / 2
     BOLA_VEL_X = (-4, 4)[int(random(2))] 
     BOLA_VEL_Y = (-4, 4)[int(random(2))]
+    
+# FIM
