@@ -1,7 +1,7 @@
 """ 
 Código para a leitura dos potenciômetros, requer biblioteca Firmata (Arduino)
 Você deve ajustar o valor de SERIAL para porta USB com seu Arduino
-No Linux pode ser que precise fazer `sudo chmod 666 /dev/ttyUSB0' ou equivalente.
+No Linux pode ser que precise fazer sudo chmod 666 /dev/ttyUSB0 (ou equivalente).
 """
 
 # ARDUINO
