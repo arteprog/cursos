@@ -10,9 +10,10 @@ add_library('arduino')  # import cc.arduino.*;
 POT_AMARELO = 0   # Pino que vai ser lido controle 'jogador Amarelo'
 POT_VERDE = 5   # Pino que vai ser lido controle 'jogador Verde'
 SERIAL = 32  # MUDE para o índice do seu Arduino na lista de portas seriais!
+
 # JOGADORES
 MEIA_ALTURA_JOGADOR = 50  # tamanho de meia altura do jogador
-ESPESSURA_JOGADOR = 10
+LARGURA_JOGADOR = 10
 
 def setup():
     size(600, 400)  # tamanho da tela
@@ -22,6 +23,7 @@ def setup():
 
 def draw():
     background(0)  # limpa a tela
+    
     # JOGADORES
     AMARELO_Y = arduino.analogRead(POT_AMARELO) / 2
     fill(255, 255, 0)  # Amarelo fill(vermelho->255, verde->255, azul->0)
