@@ -23,17 +23,17 @@ def setup():
 
 def draw():
     background(0)  # limpa a tela
-    
-    # JOGADORES
+    # CÍRCULO AMARELO
     AMARELO_Y = arduino.analogRead(POT_AMARELO) / 2
-    fill(255, 255, 0)  # Amarelo fill(vermelho->255, verde->255, azul->0)
-    ellipse(MEIA_ALTURA_JOGADOR,     # ellipse( x, y, altura, largura)
-            MEIA_ALTURA_JOGADOR,
-            AMARELO_Y,
-            AMARELO_Y)
+    fill(255, 255, 0)  # fill(vermelho->255, verde->255, azul->0) -> Amarelo
+    ellipse(50,         # x
+            50,         # y
+            AMARELO_Y,  # largura 
+            AMARELO_Y)  # altura
+    # CÍRCULO VERDE
     VERDE_Y = arduino.analogRead(POT_VERDE) / 2
-    fill(0, 255, 0)  # Verde fill(vermelho->0, verde->255, azul->0)
-    ellipse(width - 50,           # ellipse( x, y, altura, largura)
-            MEIA_ALTURA_JOGADOR,
-            VERDE_Y,
-            VERDE_Y)
+    fill(0, 255, 0)  # fill(vermelho->0, verde->255, azul->0) -> Verde
+    ellipse(width - 50,  # x
+            50,          # y
+            VERDE_Y,     # largura
+            VERDE_Y)     # altura
