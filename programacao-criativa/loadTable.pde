@@ -8,9 +8,9 @@ void setup() {
   tabela = loadTable(URL, "header, csv");
   println(tabela.getRowCount() + " linhas na tabela"); 
   for (TableRow row : tabela.rows()) {
-    float x = row.getInt("x");
-    float y = row.getInt("y");
-    float tamanho = row.getInt("tamanho");
+    float x = row.getFloat("x");
+    float y = row.getFloat("y");
+    float tamanho = row.getFloat("tamanho");
     int R = row.getInt("R");
     int G = row.getInt("G");
     int B = row.getInt("B");
