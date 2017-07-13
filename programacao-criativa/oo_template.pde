@@ -1,16 +1,16 @@
 // Substitua MeuNome pelo seu nome da classe (com a inicial maiúscula)
-MeuNome meu_nome;
+MeuNome objeto_teste;
 
 void setup() {
   size(600, 400);
   rectMode(CENTER);
-  meu_nome = new MeuNome(100, 100, 50);
+  objeto_teste = new MeuNome(100, 100, 50);
 }
 
 void draw() {
   background(128);
-  meu_nome.desenha();  
-  meu_nome.move();
+  objeto_teste.desenha();  
+  objeto_teste.move();
 }
 
 // Substitua MeuNome pelo seu nome da classe (com a inicial maiúscula)
